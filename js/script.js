@@ -1,9 +1,10 @@
 $(function() {
 
   var showResults = function(data) {
-    // for (movie in data) {
-      $("#search-results").append("<p>" + data + "</p>");
-    // }
+    for (result in data) {
+      $("#search-results").append("<p><img src='" + data[result].snippet.thumbnails.default.url + "'></p>");
+      console.log(data);
+    }
   }
 
 
@@ -17,8 +18,7 @@ $(function() {
 
           $.getJSON(url, params, function(data){
 
-        console.log(data);
-        showResults(data)
+        showResults(data.items)
 
       });
   }
