@@ -1,5 +1,11 @@
 $(function() {
 
+  var showResults = function(data) {
+    // for (movie in data) {
+      $("#search-results").append("<p>" + data + "</p>");
+    // }
+  }
+
 
    var getRequest = function(query) {
       var params = {
@@ -12,10 +18,20 @@ $(function() {
           $.getJSON(url, params, function(data){
 
         console.log(data);
+        showResults(data)
 
       });
   }
 
-  getRequest("dragon ball z abridged")
+   $("form").submit(function() {
+      var info = $("input").val();
+
+      getRequest(info);
+
+
+
+
+      return false;
+    });
 
 });
