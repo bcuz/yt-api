@@ -23,6 +23,9 @@ $(function() {
       });
   }
 
+
+
+
    $("form").submit(function() {
       var info = $("input").val();
 
@@ -33,5 +36,9 @@ $(function() {
 
       return false;
     });
+$("body").on('click', '.erase', function() {
+    $("#search-results").empty();
+
+      })
 
 });
