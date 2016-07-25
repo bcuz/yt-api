@@ -26,6 +26,10 @@
   color: black;
 }
 
+form {
+  display: inline-block;
+}
+
 @media (min-width: 700px) {
   .example-style1 {
     /*
