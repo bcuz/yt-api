@@ -36,9 +36,8 @@ $(function() {
 
       return false;
     });
-$("body").on('click', '.erase', function() {
-    $("#search-results").empty();
-
+    $("body").on('click', '.erase', function() {
+      $("#search-results").empty();
       })
 
 });
