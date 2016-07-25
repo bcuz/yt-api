@@ -2,8 +2,13 @@ $(function() {
 
   var showResults = function(data) {
     for (result in data) {
+      if (data[result].id.hasOwnProperty('videoId')) {
+      $("#search-results").append("<p><a href='https://www.youtube.com/watch?v=" +
+        data[result].id.videoId +"'><img src='" + data[result].snippet.thumbnails.default.url + "'></a></p>");
+
+      } else {
       $("#search-results").append("<p><img src='" + data[result].snippet.thumbnails.default.url + "'></p>");
-      console.log(data);
+      }
     }
   }
 
